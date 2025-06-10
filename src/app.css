@@ -1,0 +1,755 @@
+/* Global Styles */
+body { 
+  font-family: Gill Sans, Inter, Georgia, serif;
+  background-color: #f9f9f9; 
+  background-repeat: repeat; 
+  color: #333333; 
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+  justify-content: flex-start;
+  min-height: 100vh; 
+  margin: 0;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Target content links, exclude header/footer links by href pattern */
+body a:not([href*="kid-ai"]):not([href*="the-art"]):not([href*="words-matter"]) {
+    color: #444444;
+    text-decoration: underline dotted;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+/* Hover state: change color instead of font-weight */
+body a:not([href*="kid-ai"]):not([href*="the-art"]):not([href*="words-matter"]):hover {
+    color: #666666;
+}
+
+/* Visited state: change color instead of font-weight */
+body a:not([href*="kid-ai"]):not([href*="the-art"]):not([href*="words-matter"]):visited {
+    color: #333333;
+}
+
+/* Protect header links with higher specificity */
+header a[href*="kid-ai"],
+header a[href*="the-art"],
+header a[href*="words-matter"] {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+/* Home Page Specific Styles */
+body.home-page {
+  background-color: #ffffff;
+  background-image: url('/patterns/ocean.jpg');
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 0px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 0;
+}
+
+/* Typography */
+h1 { 
+  font-family: Gill Sans, Inter, Georgia, serif;
+  font-size: 2.5rem; 
+  color: #222222;
+}
+
+p { 
+  font-size: 1.25rem; 
+  opacity: 0.9; 
+  color: #444444;
+}
+
+/* A Major Page Styles */
+.container.amajor-page {
+  text-align: justify;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0;
+}
+
+body.amajor-page {
+  background-image: url('/patterns/escape-flight.png');
+}
+
+/* Words Page Styles */
+body.words-page {
+  background-image: url('/patterns/words-pattern.png');
+}
+
+/* Kid AI Page Styles */
+body.kidai-page {
+  background-image: url('/patterns/junk-mail.jpg');
+}
+
+/* Contact Page Styles */
+body.contact-page {
+  background-image: url('/patterns/special-delivery.jpg');
+}
+
+/* Confirmation Page Styles */
+body.confirmation-page {
+  background-image: url('/patterns/special-delivery.jpg');
+}
+
+/* Fools / Gruesome Twosome Page Styles */
+body.fools-page {
+  background-image: url('/patterns/science.png');
+}
+
+/* Fools Container with wider layout like admin page */
+.container.fools-container {
+  max-width: 1200px;
+  width: 95%;
+  background-color: transparent;
+}
+
+/* Header section with transparency overlay - only affects h1 and p */
+.fools-header {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 0px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Episodes grid - two columns like admin page */
+.episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+  margin-top: 0rem;
+}
+
+/* Admin Page Styles */
+body.admin-page {
+  background-image: url('/patterns/kitty.png');
+}
+
+/* Video Embeds */
+.video-container {
+  margin: 2rem 0;
+  width: 100%;
+  text-align: center;
+}
+
+.video-container iframe {
+  width: 560px;
+  height: 315px;
+  max-width: 100%;
+  border: 1px solid #dddddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Link List */
+.link-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.link-list li {
+  margin: 0.5rem 0;
+}
+
+.link-list a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
+  padding: 0.5rem;
+  border: 1px solid #dddddd;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.link-list a:hover {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Component */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #dddddd;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: relative;
+}
+
+.desktop-logo {
+  display: block;
+  width: 23rem; /* Equivalent to 400px with default 16px root font size */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 1.3vw;
+}
+
+/* admin page */
+
+.container.admin-container {
+  max-width: 1200px;
+  width: 95%;
+}
+
+.mobile-logo {
+  display: none;
+  height: var(--logo-height, 40px);
+  width: auto;
+  margin-left: 1.5vw;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.navigation {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+  padding-right: 3.2rem;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #333;
+  margin-top: 2px;
+  font-weight: 400;
+  font-size: 1.1rem; /* Slightly increased from default */
+  transition: color 0.2s ease, font-weight 0.2s ease;
+}
+
+.navigation a:hover {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Mobile menu button - hidden by default */
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 100;
+}
+
+/* Donate Button */
+.donate-container {
+  position: relative;
+  margin-right: 1.5vw;
+}
+
+.donate-button {
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: #2E1C35;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.donate-button:hover {
+  background-color: #573065;
+}
+
+/* Dropdown menu for donations */
+.donate-dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #ffffff;
+  border: 1px solid #080808;
+  border-radius: 0rem;
+  box-shadow: 0 4px 8px rgba(46, 45, 45, 0.2);
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+.donate-dropdown a {
+  color: #333;
+  font-weight: 500;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.donate-dropdown a:hover {
+  background-color: #f1f1f1;
+  color: #000000;
+  font-weight: 600;
+}
+
+/* PDF Grid & Cards for Words Page */
+.pdf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.pdf-card {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  padding: 1.5rem;
+  display: block;
+  color: #333333;
+  text-decoration: none;
+  text-align: left;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.pdf-card:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  stroke: #555555;
+}
+
+.pdf-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #222222;
+}
+
+.pdf-card p {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.8;
+  color: #555555;
+}
+
+/* Gruesome Twosome */
+.gruesome-twosome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.7rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.persona {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.persona img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.persona p {
+  margin-top: 0.75rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+}
+
+/* Episode Sample */
+.episode-sample {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 0.5rem;
+  margin: 1rem auto;
+  border-radius: 0px;
+  width: 400px;
+  text-align: center;
+  color: #333;
+  position: relative;
+  z-index: 3;
+}
+
+/* AI Bros List */
+.ai-bros-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-bro-item {
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.provider {
+  flex: 1;
+  text-align: left;
+  font-weight: bold;
+}
+
+.description {
+  flex: 1;
+  text-align: left;
+}
+
+.description a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.description a:hover {
+  text-decoration: underline;
+}
+
+/* Kid AI Container */
+.kidai-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  color: #333;
+  text-align: center;
+}
+
+/* Gill Sans Fonts */
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/GillSansBold/font.woff2') format('woff2'),
+       url('/fonts/GillSansBold/font.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/GillSansBoldItalic/font.woff2') format('woff2'),
+       url('/fonts/GillSansBoldItalic/font.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/GillSansMedium/font.woff2') format('woff2'),
+       url('/fonts/GillSansMedium/font.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/GillSansMediumItalic/font.woff2') format('woff2'),
+       url('/fonts/GillSansMediumItalic/font.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/GillSansLight/font.woff2') format('woff2'),
+       url('/fonts/GillSansLight/font.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/GillSansLightItalic/font.woff2') format('woff2'),
+       url('/fonts/GillSansLightItalic/font.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Mobile Menu Backdrop - Hidden by default */
+.mobile-menu-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 98;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  appearance: none;
+}
+
+/* Mobile menu styles - Only apply below 768px */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    word-wrap: break-word;
+  }
+  
+  p {
+    font-size: 1.1rem;
+  }
+  
+  .video-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+  
+  .site-header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 100%; /* immediately below the header */
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  
+  .menu-button {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 101;
+    margin-right: 10px;
+    color: #333;
+  }
+  
+  .navigation {
+    width: 100vw;
+    max-width: none;
+    right: -100vw;
+    background-color: rgba(255, 255, 255, 0.95);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    transition: right 0.3s ease;
+    z-index: 99;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  }
+  
+  .navigation.active {
+    right: 0;
+  }
+  
+  .navigation a {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+  }
+  
+  .mobile-menu-backdrop.active {
+    display: block;
+  }
+  
+  .pdf-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .donate-button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .donate-dropdown {
+    min-width: 150px;
+  }
+
+  .desktop-logo {
+    display: none;
+  }
+  
+  .mobile-logo {
+    display: block;
+    margin: 0 auto 0 1rem; /* Center with left margin */
+  }
+
+  .episodes-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .container.fools-container {
+    max-width: 800px;
+    width: 95%;
+  }
+  
+  .fools-header {
+    padding: 1.5rem;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .site-header {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .desktop-logo {
+    display: none;
+  }
+  
+  .mobile-logo {
+    display: block;
+    height: 30px !important;
+    margin: 0 auto 0 1rem; /* Center with left margin */
+  }
+  
+  .navigation {
+    width: 85%;
+  }
+  
+  .pdf-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .donate-dropdown a {
+    padding: 0.8rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .ai-bro-item {
+    flex-direction: column;
+    font-size: 16px;
+  }
+  
+  .provider, .description {
+    text-align: center;
+  }
+  
+  .gruesome-twosome {
+    gap: 1rem;
+  }
+  
+  .persona img {
+    max-width: 150px;
+  }
+}
+
+/* Reusable Form Styling - Scoped to .container */
+.container .form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  margin-top: 1.5rem;
+  font-family: 'Gill Sans', Inter, Georgia, serif;
+  box-sizing: border-box;
+}
+
+.container .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.container .form-group label {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.container .form-group input,
+.container .form-group textarea {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.container .form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.container button[type='submit'] {
+  align-self: center;
+  background-color: #2E1C35;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: none;
+}
+
+.container button[type='submit']:hover {
+  background-color: #573065;
+}
+.navigation {
+  display: flex;
+  align-items: center; /* Explicit vertical alignment fix */
+  gap: 1rem;
+  padding-right: 2rem; /* Ensure not excessively large */
+  height: 100%; /* Maintain consistent vertical sizing */
+}
+
+.navigation a {
+  display: flex; /* Force alignment consistency */
+  align-items: center; /* Consistent vertical alignment of links */
+  margin-top: 0; /* Remove unexpected vertical offset */
+}
