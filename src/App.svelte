@@ -32,7 +32,7 @@
     <div class="mb-6">
       <h2>Users</h2>
       <ul class="link-list">
-        <li><a href="/manage-users">Manage Users (FusionAuth Placeholder)</a></li>
+        <li><a href="/manage-users">Manage Users (Auth-n / Auth-z Placeholder)</a></li>
       </ul>
       <h2>GOAT</h2>
       <ul class="link-list">
