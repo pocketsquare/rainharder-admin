@@ -1,8 +1,8 @@
 <script>
   import { onMount } from 'svelte';
 
-  const title = "Rain Harder Admin";
-  const tagline = "Fail. Fail Again. Fail Better.";
+  const title = "Fail. Fail Again. Fail Better.";
+  const tagline = "no, seriously";
 
   onMount(() => {
     document.body.classList.add('admin-page');
